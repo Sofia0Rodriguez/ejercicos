@@ -1,0 +1,12 @@
+# detrmino si un numero es multiplo de otro
+Es_multiplo = (numero,divisor)
+resultado={}
+if resultado = numero/divisor == 0  
+return resultado
+
+numero = 50
+divisores{2, 3, 5, 7, 9, 10, y 11}
+
+resultado=Es_multiplo (numero,divisores)
+if Es_multiplo: print(numero, "es multiplo de", divisor )
+else print(numero,"no es multiplo de", divisor )
