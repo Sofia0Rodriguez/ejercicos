@@ -1,0 +1,12 @@
+#temperatura Celsius
+C= 8726
+
+# Conversión a Fahrenheit
+F= (9/5 * C)+ 32
+
+# Conversión a Kelvin
+K= C + 273.15
+
+print("temperatura en Celsius",C)
+print("Temperatura en Fahrenheit:", F)
+print("Temperatura en Kelvin:", K)
