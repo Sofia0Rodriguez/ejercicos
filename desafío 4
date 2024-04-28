@@ -1,12 +1,17 @@
-# detrmino si un numero es multiplo de otro
-Es_multiplo = (numero,divisor)
-resultado={}
-if resultado = numero/divisor == 0  
-return resultado
+def esmultiplo (numero, divisor):
+    return numero % divisor == 0
 
-numero = 50
-divisores{2, 3, 5, 7, 9, 10, y 11}
+def respuesta (numero, divisor):
+   if esmultiplo(numero, divisor): 
+       return f"{numero} es multiplo de {divisor}"  
+   else: 
+     return f"{numero} NO es multiplo de {divisor}"
 
-resultado=Es_multiplo (numero,divisores)
-if Es_multiplo: print(numero, "es multiplo de", divisor )
-else print(numero,"no es multiplo de", divisor )
+numero = 1536948
+divisores=[2, 3, 5, 7, 9, 10, 11]
+    
+   
+for divisor in divisores: 
+    print(respuesta(numero, divisor))
+    
+
