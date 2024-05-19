@@ -1,0 +1,20 @@
+numero1 = float(input("Por favor, ingrese un número: "))
+numero2 = float(input("Por favor, ingrese otro número: "))
+suma = numero1 + numero2
+resta = numero1 - numero2
+multiplicacion = numero1 * numero2
+if numero2 != 0:
+    division = numero1 / numero2
+else:
+    division = "indefinida (división por cero no permitida)"
+
+print(f"- La suma de {numero1} y {numero2} es: {suma}")
+print(f"- La resta de {numero1} y {numero2} es: {resta}")
+print(f"- La multiplicación de {numero1} y {numero2} es: {multiplicacion}")
+print(f"- La división de {numero1} entre {numero2} es: {division}")
+
+if suma > 1000:
+    print("¡La suma de los números es bastante grande!")
+
+if resta == 0:
+    print("Los números son iguales, por lo que la resta es cero.")
