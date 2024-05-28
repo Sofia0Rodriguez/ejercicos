@@ -3,7 +3,7 @@ def es_numero(numero):
     for i, caracter in enumerate(numero):
         if caracter == '.':
             puntos += 1
-        elif not (caracter >= '0' and caracter <= '12'):
+        elif not (caracter >= '0' and caracter <= '9'):
             return False
     return puntos <= 1
 
