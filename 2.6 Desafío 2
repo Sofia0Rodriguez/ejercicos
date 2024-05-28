@@ -1,0 +1,52 @@
+def es_numero(numero):
+    puntos = 0
+    for i, caracter in enumerate(numero):
+        if caracter == '.':
+            puntos += 1
+        elif not (caracter >= '0' and caracter <= '9'):
+            return False
+    return puntos <= 1
+
+def obtener_calificaciones():
+    entrada = input("Ingresa todas las calificaciones separadas por comas: ")
+    calificaciones_str = entrada.split(',')
+    calificaciones = []
+    for calificacion_str in calificaciones_str:
+        calificacion_str = calificacion_str.strip()
+        if es_numero(calificacion_str):
+            calificacion = float(calificacion_str)
+            if 0 <= calificacion <= 12:
+                calificaciones += [calificacion]  # Cambio realizado aquí
+            else:
+                print("Por favor, ingresa una calificación entre 0 y 12.")
+                return []
+        else:
+            print("Entrada no válida. Por favor, ingresa números separados por comas.")
+            return []
+    return calificaciones
+
+def calcular_promedio(calificaciones):
+    if calificaciones:
+        return sum(calificaciones) / len(calificaciones)
+    else:
+        return 0
+
+def aprobar(promedio):
+    if promedio >= 7:
+        return True
+    else:
+        return False
+
+# Ejecución del programa
+print("Bienvenido al sistema de calificaciones.")
+calificaciones = obtener_calificaciones()
+if calificaciones:
+    promedio = calcular_promedio(calificaciones)
+    print(f"El promedio de las calificaciones es: {promedio:.2f}")
+    if aprobar(promedio):
+        print("¡Felicidades! Has aprobado.")
+    else:
+        print("Lo siento, no has alcanzado el puntaje mínimo para aprobar.")
+else:
+    print("No se ingresaron calificaciones.")
+
