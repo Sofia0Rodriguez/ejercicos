@@ -1,0 +1,37 @@
+def obtener_calificaciones():
+    calificaciones = []
+    while True:
+        entrada = input("Ingresa una calificación (o escribe 'fin' para terminar): ")
+        if entrada.lower() == 'fin':
+            break
+        try:
+            calificacion = float(entrada)
+            if 0 <= calificacion <= 12 :
+                calificaciones.append(calificacion)
+            else:
+                print("Por favor, ingresa una calificación entre 0 y 12.")
+    return calificaciones
+
+def contar_aprobados_y_desaprobados(calificaciones):
+    aprobados = 0
+    desaprobados = 0
+    for calificacion in calificaciones:
+        if calificacion >= 7:
+            aprobados += 1
+        else:
+            desaprobados += 1
+    return aprobados, desaprobados
+
+def mostrar_resultados(aprobados, desaprobados):
+    print("\nResultados:")
+    print("Número de estudiantes aprobados:", aprobados)
+    print("Número de estudiantes desaprobados:", desaprobados)
+
+# Ejecución del programa
+print("Bienvenido al sistema de calificaciones.")
+calificaciones = obtener_calificaciones()
+if calificaciones:
+    aprobados, desaprobados = contar_aprobados_y_desaprobados(calificaciones)
+    mostrar_resultados(aprobados, desaprobados)
+else:
+    print("No se ingresaron calificaciones.")
