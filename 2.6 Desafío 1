@@ -1,15 +1,27 @@
+def es_numero(numero):
+    puntos = 0
+    for i, caracter in enumerate(numero):
+        if caracter == '.':
+            puntos += 1
+        elif not (caracter >= '0' and caracter <= '12'):
+            return False
+    return puntos <= 1
+
 def obtener_calificaciones():
     calificaciones = []
-    while True:
-        entrada = input("Ingresa una calificación (o escribe 'fin' para terminar): ")
-        if entrada.lower() == 'fin':
-            break
-        try:
-            calificacion = float(entrada)
-            if 0 <= calificacion <= 12 :
+    calificacion_usuario = input("Ingresa una calificación (o escribe 'fin' para terminar): ")
+    while calificacion_usuario.lower() != 'fin':
+        if es_numero(calificacion_usuario):
+            calificacion = float(calificacion_usuario)
+            if 0 <= calificacion <= 12:
                 calificaciones.append(calificacion)
+                calificacion_usuario = input("Ingresa otra calificación (o escribe 'fin' para terminar): ")
             else:
                 print("Por favor, ingresa una calificación entre 0 y 12.")
+                calificacion_usuario = input("Ingresa una calificación válida (o escribe 'fin' para terminar): ")
+        else:
+            print("Entrada no válida. Por favor, ingresa un número o 'fin' para terminar.")
+            calificacion_usuario = input("Ingresa una calificación válida (o escribe 'fin' para terminar): ")
     return calificaciones
 
 def contar_aprobados_y_desaprobados(calificaciones):
