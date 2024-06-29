@@ -1,0 +1,15 @@
+# Inventario inicial
+inventario = ["manzanas", "bananas", "zanahorias", "espinacas", "brocoli", "cebolla", "kiwis"]
+
+# Un cliente viene y compra todas las bananas.
+
+# Eliminar bananas
+inventario.remove("bananas")
+
+#Decides que sería más fácil gestionar el inventario si estuviera ordenado alfabéticamente.
+
+# Ordenar alfabéticamente
+inventario.sort()
+
+# Imprimir el inventario final
+print(inventario)
