@@ -1,0 +1,13 @@
+# Lista original de códigos de identificación de libros
+codigos = [1042, 7034, 4555, 4955, 9567, 5441]
+
+# Función para simular orden decreciente
+def orden_decreciente(codigo):
+    return -codigo
+
+# Ordenar en orden decreciente sin modificar la lista original
+codigos_ordenados = sorted(codigos, key=orden_decreciente)
+
+# Imprimir la lista original y la lista ordenada
+print("Lista original:", codigos)
+print("Lista ordenada en orden decreciente:", codigos_ordenados)
