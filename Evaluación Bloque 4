@@ -1,0 +1,27 @@
+class Vehiculo:
+    def __init__(self, velocidad):
+        self._velocidad = velocidad  # Atributo encapsulado
+
+    def get_velocidad(self):
+        return self._velocidad  # Método para acceder a la velocidad
+
+    def mover(self):
+        pass  # Método que será sobrescrito en las subclases
+
+
+class Coche(Vehiculo):
+    def mover(self):
+        return f"El coche se mueve a {self.get_velocidad()} km/h"  # Sobrescritura del método 'mover'
+
+
+class Bicicleta(Vehiculo):
+    def mover(self):
+        return f"La bicicleta se mueve a {self.get_velocidad()} km/h"  # Sobrescritura del método 'mover'
+
+
+# Crear instancias de Coche y Bicicleta
+vehiculos = [Coche(120), Bicicleta(25)]
+
+# Usar polimorfismo para llamar al método 'mover' en cada instancia
+for vehiculo in vehiculos:
+    print(vehiculo.mover())
