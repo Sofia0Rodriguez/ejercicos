@@ -1,0 +1,19 @@
+class Musico:
+    def instrumento(self):
+        return "El músico toca un instrumento."
+
+class Guitarrista(Musico):
+    def instrumento(self):
+        return "El guitarrista toca la guitarra."
+
+class Baterista(Musico):
+    def instrumento(self):
+        return "El baterista toca la batería."
+
+# Instanciar objetos de las subclases
+guitarrista = Guitarrista()
+baterista = Baterista()
+
+# Demostración del polimorfismo
+for musico in (guitarrista, baterista):
+    print(musico.instrumento())
